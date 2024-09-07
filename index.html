@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvoCash Microfinance App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="EvoCash-removebg-preview.png" alt="EvoCash Logo" class="logo">
+            <h1>EvoCash</h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#transfer">Transfer Money</a></li>
+            <li><a href="#loans">Loans</a></li>
+            <li><a href="#profile">Profile</a></li>
+        </ul>
+    </nav>
+
+    <section id="dashboard" class="section active">
+        <h2>Dashboard</h2>
+        <div class="dashboard-cards">
+            <div class="card">
+                <h3>Account Balance</h3>
+                <p>D12,500</p>
+            </div>
+            <div class="card">
+                <h3>Recent Transactions</h3>
+                <p>View Details</p>
+            </div>
+            <div class="card">
+                <h3>Investment</h3>
+                <p>D3,200</p>
+            </div>
+        </div>
+        <div class="chart-container">
+            <canvas id="spendingChart"></canvas>
+        </div>
+    </section>
+
+    <section id="transfer" class="section">
+        <h2>Transfer Money</h2>
+        <form action="/transfer" method="post">
+            <label for="recipient">Recipient</label>
+            <input type="text" id="recipient" name="recipient" placeholder="Enter recipient name" required>
+            
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+            
+            <button type="submit">Transfer</button>
+        </form>
+    </section>
+
+    <section id="loans" class="section">
+        <h2>Apply for Loan</h2>
+        <form id="loanForm" action="/apply-loan" method="post">
+            <label for="loan-amount">Loan Amount</label>
+            <input type="number" id="loan-amount" name="loanAmount" placeholder="Enter amount" required>
+            
+            <label for="loan-term">Loan Term</label>
+            <input type="number" id="loan-term" name="loanTerm" placeholder="Enter term (months)" required>
+
+            <label for="interest-rate">Interest Rate</label>
+            <input type="number" id="interest-rate" value="5" readonly> <!-- Fixed interest rate -->
+
+            <label for="total-repayment">Total Repayment</label>
+            <input type="text" id="total-repayment" placeholder="Total repayment amount" readonly>
+
+            <button type="submit">Apply</button>
+        </form>
+    </section>
+
+    <section id="profile" class="section">
+        <h2>Profile</h2>
+        <div class="profile-card">
+            <img src="IMG_2378.PNG" alt="Profile Picture">
+            <h3>Fanta Tamba</h3>
+            <p>Email: fantatamba2000@gmail.com</p>
+            <p>Phone: +2203449861</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 EvoCash Microfinance. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
